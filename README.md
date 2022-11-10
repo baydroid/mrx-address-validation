@@ -1,13 +1,11 @@
-# bitcoin-address-validation
+# mrx-address-validation
 
-[![Build Status](https://img.shields.io/travis/ruigomeseu/bitcoin-address-validation.svg)](https://travis-ci.org/ruigomeseu/bitcoin-address-validation)
-[![npm version](https://badge.fury.io/js/bitcoin-address-validation.svg)](https://www.npmjs.com/package/bitcoin-address-validation)
-[![npm](https://img.shields.io/npm/dt/bitcoin-address-validation.svg)](https://www.npmjs.com/package/bitcoin-address-validation)
-[![Twitter Follow](https://img.shields.io/twitter/follow/8bitgomes.svg?style=social)](https://twitter.com/8bitgomes)
+Validate MRX addresses - P2WSH, P2WPKH, P2PKH, P2SH and P2TR.
 
-Validate Bitcoin addresses - P2WSH, P2WPKH, P2PKH, P2SH and P2TR.
+This fork is almost identical to the original. The values of some constanants have been changed, and the typescript syntax updated.
 
 ```js
+// This is actually a bitcoin adddress validated by bitcoin-address-validation from which this repository's forked.
 validate('bc1qw508d6qejxtdg4y5r3zarvary0c5xw7kv8f3t4');
 ==> true
 
@@ -21,13 +19,9 @@ getAddressInfo('bc1qw508d6qejxtdg4y5r3zarvary0c5xw7kv8f3t4');
 ```
 
 ## Installation
-Add `bitcoin-address-validation` to your Javascript project dependencies using Yarn:
+Add `mrx-address-validation` to your Javascript project dependencies:
 ```bash
-yarn add bitcoin-address-validation
-```
-Or NPM:
-```bash
-npm install bitcoin-address-validation --save
+npm install https://github.com/baydroid/mrx-address-validation.git
 ```
 
 ## Usage
@@ -50,6 +44,7 @@ const { validate, getAddressInfo } = require('bitcoin-address-validation');
 `validate(address)` returns `true` for valid Bitcoin addresses or `false` for invalid Bitcoin addresses.
 
 ```js
+// This is actually a bitcoin adddress validated by bitcoin-address-validation from which this repository's forked.
 validate('17VZNX1SN5NtKa8UQFxwQbFeFc3iqRYhem')
 ==> true
 
@@ -62,6 +57,7 @@ validate('invalid')
 `validate(address, network)` allows you to validate whether an address is valid and belongs to `network`.
 
 ```js
+// These are actually bitcoin adddresses validated by bitcoin-address-validation from which this repository's forked.
 validate('36bJ4iqZbNevh9b9kzaMEkXb28Gpqrv2bd', 'mainnet')
 ==> true
 
@@ -79,6 +75,7 @@ validate('2N4RsPe5F2fKssy2HBf2fH2d7sHdaUjKk1c', 'testnet')
 If the input address is invalid, an exception will be thrown.
 
 ```js
+// This is actually a bitcoin adddress looked up by bitcoin-address-validation from which this repository's forked.
 getAddressInfo('17VZNX1SN5NtKa8UQFxwQbFeFc3iqRYhem')
 ==> {
   address: '17VZNX1SN5NtKa8UQFxwQbFeFc3iqRYhem',
@@ -125,6 +122,7 @@ type AddressInfo = {
 #### TypeScript usage
 
 ```ts
+// These are actually bitcoin adddresses validated nd looked up by bitcoin-address-validation from which this repository's forked.
 import { validate, getAddressInfo, Network, AddressInfo } from 'bitcoin-address-validation';
 
 validate('36nGbqV7XCNf2xepCLAtRBaqzTcSjF4sv9', Network.mainnet);

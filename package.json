@@ -1,9 +1,7 @@
 {
   "name": "mrx-address-validation",
   "version": "2.2.1",
-  "description": "Validate any Bitcoin address - P2WSH, P2WPKH, P2SH, P2PKH - Mainnet & Testnet",
-  "homepage": "https://github.com/ruigomeseu/bitcoin-address-validation",
-  "bugs": "https://github.com/ruigomeseu/bitcoin-address-validation/issues",
+  "description": "Validate any MRX address - P2WSH, P2WPKH, P2SH, P2PKH - Mainnet & Testnet",
   "main": "lib/index.cjs.js",
   "module": "lib/index.esm.js",
   "unpkg": "lib/index.umd.js",
