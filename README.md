@@ -122,7 +122,7 @@ type AddressInfo = {
 #### TypeScript usage
 
 ```ts
-// These are actually bitcoin adddresses validated nd looked up by bitcoin-address-validation from which this repository's forked.
+// These are actually bitcoin adddresses validated and looked up by bitcoin-address-validation from which this repository's forked.
 import { validate, getAddressInfo, Network, AddressInfo } from 'bitcoin-address-validation';
 
 validate('36nGbqV7XCNf2xepCLAtRBaqzTcSjF4sv9', Network.mainnet);
