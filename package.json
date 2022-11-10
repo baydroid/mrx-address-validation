@@ -1,5 +1,5 @@
 {
-  "name": "bitcoin-address-validation",
+  "name": "mrx-address-validation",
   "version": "2.2.1",
   "description": "Validate any Bitcoin address - P2WSH, P2WPKH, P2SH, P2PKH - Mainnet & Testnet",
   "homepage": "https://github.com/ruigomeseu/bitcoin-address-validation",
@@ -39,7 +39,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ruigomeseu/bitcoin-address-validation"
+    "url": "https://github.com/baydroid/mrx-address-validation.git"
   },
   "devDependencies": {
     "@types/jest": "^26.0.20",
