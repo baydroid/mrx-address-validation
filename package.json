@@ -4,10 +4,10 @@
   "description": "Validate any Bitcoin address - P2WSH, P2WPKH, P2SH, P2PKH - Mainnet & Testnet",
   "homepage": "https://github.com/ruigomeseu/bitcoin-address-validation",
   "bugs": "https://github.com/ruigomeseu/bitcoin-address-validation/issues",
-  "main": "./lib/index.cjs.js",
-  "module": "./lib/index.esm.js",
-  "unpkg": "./lib/index.umd.js",
-  "types": "./lib/index.d.ts",
+  "main": "lib/index.cjs.js",
+  "module": "lib/index.esm.js",
+  "unpkg": "lib/index.umd.js",
+  "types": "lib/index.d.ts",
   "files": [
     "lib/**/*"
   ],
