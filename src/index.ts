@@ -1,16 +1,19 @@
+// This is very slightly modified from the npm module bitcoin-address-validation.
+// I changed the key constants in addressTypes, and made it compatable with later versions of typescript.
+
 import { base58_to_binary } from 'base58-js'
 import { bech32, bech32m } from 'bech32';
 import { createHash } from 'sha256-uint8array';
 
 const sha256 = (payload: Uint8Array) => createHash().update(payload).digest();
 
-enum Network {
+export enum Network {
   mainnet = 'mainnet',
   testnet = 'testnet',
   regtest = 'regtest',
 }
 
-enum AddressType {
+export enum AddressType {
   p2pkh = 'p2pkh',
   p2sh = 'p2sh',
   p2wpkh = 'p2wpkh',
@@ -18,7 +21,7 @@ enum AddressType {
   p2tr = 'p2tr',
 }
 
-type AddressInfo = {
+export type AddressInfo = {
   bech32: boolean;
   network: Network;
   address: string;
@@ -26,27 +29,27 @@ type AddressInfo = {
 };
 
 const addressTypes: { [key: number]: { type: AddressType; network: Network } } = {
-  0x00: {
-    type: AddressType.p2pkh,
-    network: Network.mainnet,
-  },
-
-  0x6f: {
-    type: AddressType.p2pkh,
-    network: Network.testnet,
-  },
-
-  0x05: {
-    type: AddressType.p2sh,
-    network: Network.mainnet,
-  },
-
-  0xc4: {
-    type: AddressType.p2sh,
-    network: Network.testnet,
-  },
-};
-
+    0x3a: {
+      type: AddressType.p2pkh,
+      network: Network.mainnet,
+    },
+  
+    0x78: {
+      type: AddressType.p2pkh,
+      network: Network.testnet,
+    },
+  
+    0x32: {
+      type: AddressType.p2sh,
+      network: Network.mainnet,
+    },
+  
+    0x6e: {
+      type: AddressType.p2sh,
+      network: Network.testnet,
+    },
+  };
+  
 const parseBech32 = (address: string): AddressInfo => {
   let decoded;
 
@@ -97,9 +100,9 @@ const parseBech32 = (address: string): AddressInfo => {
   };
 };
 
-const getAddressInfo = (address: string): AddressInfo => {
+export const getAddressInfo = (address: string): AddressInfo => {
   let decoded: Uint8Array;
-  const prefix = address.substr(0, 2).toLowerCase();
+  const prefix = address.substring(0, 2).toLowerCase();
 
   if (prefix === 'bc' || prefix === 'tb') {
     return parseBech32(address);
@@ -143,7 +146,7 @@ const getAddressInfo = (address: string): AddressInfo => {
   };
 };
 
-const validate = (address: string, network?: Network) => {
+export const validate = (address: string, network?: Network) => {
   try {
     const addressInfo = getAddressInfo(address);
 
@@ -157,5 +160,4 @@ const validate = (address: string, network?: Network) => {
   }
 };
 
-export { getAddressInfo, Network, AddressType, AddressInfo, validate };
 export default validate;
